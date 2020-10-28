@@ -1,0 +1,12 @@
+@EndUserText.label: 'Access control for ZI_RAP_TRAVEL_MIPO'
+@MappingRole: true
+define role ZI_RAP_TRAVEL_MIPO {
+    grant
+        select
+            on
+                ZI_RAP_Travel_mipo
+                    where
+                        CurrencyCode = 'EUR' and
+                        ( (  TravelStatus ) = aspect pfcg_auth ( zostatmipo, zostatmipo, actvt = '03' ) or
+                          true );  // Can't change user auths
+}
