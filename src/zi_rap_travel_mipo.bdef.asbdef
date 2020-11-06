@@ -1,0 +1,68 @@
+managed; // implementation in class zbp_i_rap_travel_mipo unique;
+
+define behavior for ZI_RAP_Travel_mipo alias TrAVel
+persistent table zrap_atrav_mipo
+lock master
+//authorization master ( instance )
+etag master LocalLastChangedAt
+{
+  create;
+  update;
+  delete;
+  association _Booking { create; }
+
+  field ( numbering : managed, readonly ) TravelUUID;
+
+  mapping for zrap_atrav_mipo
+  {
+    TravelUUID         = travel_uuid;
+    TravelID           = travel_id;
+    AgencyID           = agency_id;
+    CustomerID         = customer_id;
+    BeginDate          = begin_date;
+    EndDate            = end_date;
+    BookingFee         = booking_fee;
+    TotalPrice         = total_price;
+    CurrencyCode       = currency_code;
+    Description        = description;
+    TravelStatus       = overall_status;
+    CreatedBy          = created_by;
+    CreatedAt          = created_at;
+    LastChangedBy      = last_changed_by;
+    LastChangedAt      = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}
+
+
+define behavior for ZI_RAP_Booking_mipo alias Booking
+persistent table zrap_abook_mipo
+lock dependent by _Travel
+//authorization dependent by <association>
+etag master LocalLastChangedAt
+{
+  update;
+  delete;
+
+  association _Travel;
+
+  field ( numbering : managed, readonly ) BookingUUID;
+  field ( readonly ) TravelUUID;
+
+  mapping for zrap_abook_mipo
+  {
+    BookingUUID        = booking_uuid;
+    TravelUUID         = travel_uuid;
+    BookingID          = booking_id;
+    BookingDate        = booking_date;
+    CustomerID         = customer_id;
+    CarrierID          = carrier_id;
+    ConnectionID       = connection_id;
+    FlightDate         = flight_date;
+    FlightPrice        = flight_price;
+    CurrencyCode       = currency_code;
+    CreatedBy          = created_by;
+    LastChangedBy      = last_changed_by;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}
