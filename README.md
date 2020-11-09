@@ -1,5 +1,5 @@
 # openSAP-RAP
-openSAP Restful Aplication Programming model
+My coursework for openSAP Restful Aplication Programming model
 
 ## License
 I don't really care if anyone copies this, but since some of the code comes from 
