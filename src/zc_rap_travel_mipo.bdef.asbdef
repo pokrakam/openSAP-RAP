@@ -8,6 +8,10 @@ use etag
   use delete;
 
   use association _Booking { create; }
+
+  use action acceptTravel;
+  use action rejectTravel;
+
 }
 
 define behavior for ZC_RAP_Booking_mipo alias Booking
