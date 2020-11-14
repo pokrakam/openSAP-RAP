@@ -11,7 +11,9 @@ ENDCLASS.
 
 
 
-CLASS zcl_generate_demo_data_mipo IMPLEMENTATION.
+CLASS ZCL_GENERATE_DEMO_DATA_MIPO IMPLEMENTATION.
+
+
   METHOD if_oo_adt_classrun~main.
 
     DELETE FROM zrap_atrav_mipo.
@@ -71,5 +73,4 @@ CLASS zcl_generate_demo_data_mipo IMPLEMENTATION.
     out->write( 'Travel and booking demo data inserted.').
 
   ENDMETHOD.
-
 ENDCLASS.

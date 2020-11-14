@@ -79,7 +79,7 @@ ENDCLASS.
 
 
 
-CLASS zcm_rap_mipo IMPLEMENTATION.
+CLASS ZCM_RAP_MIPO IMPLEMENTATION.
 
 
   METHOD constructor ##ADT_SUPPRESS_GENERATION.
@@ -101,6 +101,4 @@ CLASS zcm_rap_mipo IMPLEMENTATION.
     me->agencyid = |{ agencyid ALPHA = OUT }|.
 
   ENDMETHOD.
-
 ENDCLASS.
-

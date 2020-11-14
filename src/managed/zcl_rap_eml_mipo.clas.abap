@@ -12,7 +12,8 @@ ENDCLASS.
 
 
 
-CLASS zcl_rap_eml_mipo IMPLEMENTATION.
+CLASS ZCL_RAP_EML_MIPO IMPLEMENTATION.
+
 
   METHOD if_oo_adt_classrun~main.
     CONSTANTS TravelID TYPE string VALUE '36DA0BD08BB6924D170009027659A94B' ##NO_TEXT.
@@ -87,5 +88,4 @@ CLASS zcl_rap_eml_mipo IMPLEMENTATION.
     out->write( 'Update done' ).
 
   ENDMETHOD.
-
 ENDCLASS.

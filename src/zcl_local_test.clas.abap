@@ -11,7 +11,8 @@ ENDCLASS.
 
 
 
-CLASS zcl_local_test IMPLEMENTATION.
+CLASS ZCL_LOCAL_TEST IMPLEMENTATION.
+
 
   METHOD if_oo_adt_classrun~main.
     DATA o TYPE REF TO object.
@@ -24,5 +25,4 @@ CLASS zcl_local_test IMPLEMENTATION.
     out->write( s ).
 
   ENDMETHOD.
-
 ENDCLASS.
